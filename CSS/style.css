@@ -14,13 +14,15 @@ body {
     "footer footer footer footer";
   grid-template-columns: repeat(4, 1fr);
   font-size: 1.6rem;
-  font-family: "roboto", sans-serif;
   font-weight: 400;
+  
+  
 }
 
 .header {
   grid-area: header;
-  background-color: white;
+  background-color: #F4E041;
+
 }
 
 .header .header-container {
@@ -29,21 +31,24 @@ body {
   justify-content: space-between;
   align-items: center;
   min-height: 75px;
+  
 }
 
 .header h1 {
   font-size: 3rem;
   font-weight: 700;
   transition: 0.3s;
+  color: black;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .header a:hover h1 {
-  color: coral;
+  color: rgb(203, 131, 49);
 }
 .hero {
   grid-area: hero;
   height: 89vh;
-  background: url("../images/lemons.jpg") center center no-repeat;
+  background: url("../images/limão\ capa.jpg") center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -52,9 +57,12 @@ body {
 }
 
 .hero h2 {
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 4rem;
+  font-family:"Bubbler One", sans-serif; 
+
+  
 }
 
 .hero::after {
@@ -91,9 +99,10 @@ body {
   grid-area: about;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #fff;
+  background-color:			#e4e4e4;
   max-width: var(--max-width-size);
   margin: 0 auto;
+  font-family:"Cormorant Garamond", serif;
 }
 
 .about .image {
@@ -102,12 +111,12 @@ body {
 }
 
 .about .image.right {
-  background: url("../images/bridge.jpg") center center no-repeat;
+  background: url("../images/no\ pé\ 2.jpg") center center no-repeat;
   background-size: cover;
 }
 
 .about .image.left {
-  background: url("../images/sky.jpg") center center no-repeat;
+  background: url("../images/sicilia.jpeg") center center no-repeat;
   background-size: cover;
 }
 
@@ -161,15 +170,21 @@ body {
 }
 
 .services .card-info {
-  padding: 70% 20%;
+  padding: 20% 20%;
 }
 
+@keyframes desceSobe {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(50px); }
+  100% { transform: translateY(0); }
+}
 .services .card-info img {
   width: 250px;
   margin-bottom: 30px;
+   animation: desceSobe 3s ease-in-out 1s infinite alternate;
 }
 .services .card-info h3 {
-  font-size: 1.8rem;
+  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -178,16 +193,48 @@ body {
   font-weight: 400;
   max-width: 400px;
   margin: 20px auto 0;
-  line-height: 25px;
+   line-height: 1.5;
+  font-family: "Cormorant Garamond", serif;
+  font: bold;
+
 }
 
 .services .card-info:nth-child(1) {
-  background-color: lightskyblue;
+  background-color:	#fff6c4;
+   font-family: "Cormorant Garamond", serif;
 }
 
 .services .card-info:nth-child(2) {
-  background-color: lightpink;
+  background-color: #fffbe3;
+   font-family: "Cormorant Garamond", serif;
 }
+
+.beneficios-limao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beneficios-limao li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.8rem;
+  line-height: 2;
+  margin-top: 1.5rem;
+  font-weight: 400;
+    font-size: 2rem;
+
+}
+
+.beneficios-limao li::before {
+  content: "•";
+  position:absolute;
+  left: 0;
+  color: #c4a300;  
+  font-size: 2rem;
+  line-height: 2;
+}
+
 
 @media (max-width: 750px) {
   .services {
@@ -208,7 +255,49 @@ body {
 
 .sections-projects a:hover img {
   opacity: 0.8;
+
 }
+
+.sections-projects{
+   position: relative;
+  display:inline-block;
+  padding-bottom: 2rem;
+}
+
+ 
+
+.tooltip{
+  visibility: hidden;
+  bottom: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, 120%);
+  opacity: 0;
+  transition:opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  z-index: 10;
+
+  
+
+}
+
+.sections-projects a:hover .tooltip {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(-50%, 100%);
+}
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   .projects {
@@ -231,6 +320,7 @@ body {
   flex-direction: column;
   text-align: center;
   padding: 100px;
+   font-family: "Cormorant Garamond", serif;
 }
 
 .footer h4 {

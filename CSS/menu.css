@@ -1,5 +1,6 @@
 .header nav ul {
   display: flex;
+   
 }
 
 .header nav ul li a {
@@ -8,11 +9,12 @@
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.3s;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .header nav ul li a:hover {
   color: white;
-  background-color: coral;
+  background-color:rgb(203, 131, 49);
 }
 
 /* RESPONSIVE */
